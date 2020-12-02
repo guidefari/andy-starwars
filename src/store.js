@@ -1,10 +1,10 @@
-import {applyMiddleware, createStore} from 'redux'
+import { createStore, combineReducers} from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 
-const reducer = {}
+const reducer = () => { return 'a'}
 
 const initialState = {}
 
 const store = createStore(reducer, initialState, composeWithDevTools)
-
+window.store = store
 export default store
