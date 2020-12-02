@@ -5,6 +5,6 @@ const reducer = () => { return 'a'}
 
 const initialState = {}
 
-const store = createStore(reducer, initialState, composeWithDevTools)
+const store = createStore(reducer, initialState)
 window.store = store
 export default store
