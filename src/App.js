@@ -1,36 +1,26 @@
 import React, { useEffect } from 'react'
-import {useDispatch} from 'react-redux'
-import axios from 'axios'
+import {useDispatch, useSelector} from 'react-redux'
+import { populate } from './actions/characterActions'
 
-// DISPATCH
 
- 
-function App() {
+
+const App = () => {
     const dispatch = useDispatch()
-    
-    // ACTION
-    const populate = (data) => {
-        return {
-            type: 'POPULATE',
-            payload: data,
-        }
-    }
+    const {characters} = useSelector(state => state.characters)
+    // characters.loading === 'false' && console.log(characters.results)
     
     useEffect(() => {
-        axios.get('https://swapi.dev/api/people/').
-        then( function(response){
-            console.log(response)
-            dispatch(populate(response))
-        }
-        )
-        .catch(function(error) {
-            console.log(error)
-        })
-    })
+        dispatch(populate())
+    }, [dispatch])
     
     return (
         <div>
             <h1>WYSIWYG</h1>
+            <div className="container">
+                {/* {data.results.map((character) => (
+                    <h4>{character.name}</h4>
+                ))} */}
+            </div>
         </div>
     )
 }
