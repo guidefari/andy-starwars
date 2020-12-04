@@ -10,7 +10,7 @@ export const populate = () => async (dispatch) => {
 
         dispatch({
             type: 'POPULATE',
-            payload: data
+            payload: data.results
         })
 
     } catch (error) {

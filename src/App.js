@@ -6,8 +6,9 @@ import { populate } from './actions/characterActions'
 
 const App = () => {
     const dispatch = useDispatch()
-    const {characters} = useSelector(state => state.characters)
-    // characters.loading === 'false' && console.log(characters.results)
+    const charactersList = useSelector(state => state.characters)
+    const {loading, characters} = charactersList
+    !loading && console.log(characters)
     
     useEffect(() => {
         dispatch(populate())
@@ -17,12 +18,27 @@ const App = () => {
         <div>
             <h1>WYSIWYG</h1>
             <div className="container">
-                {/* {data.results.map((character) => (
-                    <h4>{character.name}</h4>
-                ))} */}
+                {!loading  && (
+                    <div>
+                        {characters.map((character) => {
+                            <h4>{character.name}</h4>
+                        })}
+                    </div>
+                )}
             </div>
         </div>
     )
 }
 
 export default App
+
+// { loading ? (
+// <div>loading</div>
+// ) : (
+//     <div>
+//         {/* {characters.results.map(character =>
+//             <h4>{character.name}</h4>
+//         )} */}
+//     </div>
+    
+// )}
