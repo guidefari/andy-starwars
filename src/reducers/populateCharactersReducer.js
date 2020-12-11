@@ -1,5 +1,7 @@
 // REDUCER
-export const populateCharactersReducer = (state = { }, action) => {
+const initalState = {loading: true, characters: {}}
+
+export const populateCharactersReducer = (state = initalState, action) => {
     switch(action.type){
         case 'POPULATE_REQUEST':
             return {loading: true, characters: {}} 

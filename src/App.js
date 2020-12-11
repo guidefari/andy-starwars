@@ -21,7 +21,9 @@ const App = () => {
                 {!loading  && (
                     <div>
                         {characters.map((character) => {
-                            <h4>{character.name}</h4>
+                            return(
+                                <h4 key={character.name}>{character.name}</h4>
+                            )
                         })}
                     </div>
                 )}
