@@ -13,7 +13,8 @@ body {
     text-align: center;
     text-decoration: underline;
     font-size: 3rem;
-    margin-bottom: 7rem;
+    color: #8ed8fc;
+    margin: 4rem 0;
 }
 
 /* Character card styling */
@@ -27,10 +28,27 @@ body {
 }
 
 .card {
-    margin: 0 2rem 1rem 2rem;
+    margin: 0 1.7rem 1.7rem 1.7rem;
     padding: 0 2.2rem;
     min-width: 15rem;
-    background-color: #2e4558;
+    background-color: hsl(207, 31%, 26%);
     color: #e89e10;
+    border-radius: 2px;
+}
+
+.character-name{
+    text-decoration: underline;
+    transform: translateX(-15px);
+    /* transform: translateY(-30px); */
+    font-size: 1.4rem;
+}
+
+.character-stats{
+    /* margin: 0; */
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 8px solid hsl(207, 31%, 46%);
+    border-right: 8px solid hsl(207, 31%, 46%);
+    text-decoration: none;
 }
 

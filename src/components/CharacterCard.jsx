@@ -3,10 +3,12 @@ import React from 'react'
 const CharacterCard = ({character: {name, height, mass, birth_year}}) => {
     return (
         <div className='card'>
-            <h3>Name: {name}</h3>
-            <h3>Height: {height}cm</h3>
-            <h3>Mass: {mass}kg</h3>
-            <h3>Birth Year: {birth_year}</h3>
+            <h3 className='character-name'>{name}</h3>
+            <ul className='character-stats'>
+                <li>Height: <strong style={{fontSize: '1.3rem'}}>{height}cm</strong></li>
+                <li>Mass: <strong style={{fontSize: '1.3rem'}}>{mass}kg</strong></li>
+                <li>Birth Year: <strong style={{fontSize: '1.3rem'}}>{birth_year}</strong></li>
+            </ul>
         </div>
     )
 }
