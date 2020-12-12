@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { populate } from './actions/characterActions'
+import CharacterCard from './components/CharacterCard'
 
 
 
@@ -16,15 +17,16 @@ const App = () => {
     
     return (
         <div>
-            <h1>WYSIWYG</h1>
+            <h1 className='heading'>STAR WARS CHARACTER STATS</h1>
             <div className="container">
                 {!loading  && (
-                    <div>
-                        {characters.map((character) => {
-                            return(
-                                <h4 key={character.name}>{character.name}</h4>
-                            )
-                        })}
+                    <div className='card-wrapper'>
+                        {characters.map((character) => 
+                            // <h4 key={character.name}>
+                            //     {character.name}
+                            // </h4>
+                            <CharacterCard key={character.name} character={character} />
+                        )}
                     </div>
                 )}
             </div>
